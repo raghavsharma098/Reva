@@ -26,22 +26,24 @@ const benefits = [
 
 export default function WhyChooseCreonex() {
   return (
-    <section className="bg-black text-white py-24 px-4 md:px-12 lg:px-32 relative overflow-hidden">
+    <section className="bg-black text-white py-16 px-4 sm:px-6 md:px-12 lg:px-32">
       {/* Section Heading */}
-      <div className="text-center mb-20">
-        <p className="text-sm bg-[#1C1C1C] px-4 py-2 rounded-full inline-block mb-4">
+      <div className="text-center mb-16">
+        <p className="text-sm bg-[#1C1C1C] px-4 py-2 rounded-full inline-block mb-3">
           ★ Our Benefits
         </p>
-        <h2 className="text-5xl font-extrabold">Discover Appit’s Benefits</h2>
-        <p className="text-gray-400 mt-4 max-w-xl mx-auto">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
+          Discover Appit’s Benefits
+        </h2>
+        <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-sm sm:text-base">
           Unlock a world of meaningful connections, tailored experiences, and seamless social interaction.
         </p>
       </div>
 
       {/* Benefits Grid + Phone */}
-      <div className="relative flex flex-col lg:flex-row items-center justify-center gap-12">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-16">
         {/* Left Cards */}
-        <div className="flex flex-col gap-6 w-full max-w-sm">
+        <div className="flex flex-col gap-6 w-full max-w-md">
           {benefits.slice(0, 2).map((item, index) => (
             <motion.div
               key={index}
@@ -52,16 +54,16 @@ export default function WhyChooseCreonex() {
                 ease: "easeInOut",
                 delay: index * 0.3,
               }}
-              className="bg-[#111111] p-6 rounded-2xl shadow-md"
+              className="bg-[#111111] p-5 sm:p-6 rounded-2xl shadow-md"
             >
-              <div className="text-2xl mb-4">{item.icon}</div>
-              <h3 className="text-xl font-semibold">{item.title}</h3>
+              <div className="text-2xl mb-3">{item.icon}</div>
+              <h3 className="text-lg sm:text-xl font-semibold">{item.title}</h3>
               <p className="text-gray-400 text-sm mt-2">{item.description}</p>
             </motion.div>
           ))}
         </div>
 
-        {/* Center Image (Phone Mockup) */}
+        {/* Center Image */}
         <motion.div
           animate={{ y: [0, -10, 0] }}
           transition={{
@@ -69,7 +71,7 @@ export default function WhyChooseCreonex() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="w-full max-w-[300px]"
+          className="w-full max-w-[250px] sm:max-w-[300px]"
         >
           <img
             src="/4.png"
@@ -79,7 +81,7 @@ export default function WhyChooseCreonex() {
         </motion.div>
 
         {/* Right Cards */}
-        <div className="flex flex-col gap-6 w-full max-w-sm">
+        <div className="flex flex-col gap-6 w-full max-w-md">
           {benefits.slice(2).map((item, index) => (
             <motion.div
               key={index}
@@ -90,10 +92,10 @@ export default function WhyChooseCreonex() {
                 ease: "easeInOut",
                 delay: index * 0.3,
               }}
-              className="bg-[#111111] p-6 rounded-2xl shadow-md"
+              className="bg-[#111111] p-5 sm:p-6 rounded-2xl shadow-md"
             >
-              <div className="text-2xl mb-4">{item.icon}</div>
-              <h3 className="text-xl font-semibold">{item.title}</h3>
+              <div className="text-2xl mb-3">{item.icon}</div>
+              <h3 className="text-lg sm:text-xl font-semibold">{item.title}</h3>
               <p className="text-gray-400 text-sm mt-2">{item.description}</p>
             </motion.div>
           ))}
