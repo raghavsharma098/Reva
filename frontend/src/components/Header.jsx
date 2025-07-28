@@ -1,24 +1,44 @@
+// Header.jsx
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // 🧭 For navigation
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate(); // 🔗
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const handleNavClick = (section) => {
-    const id = section.toLowerCase().replace(/\s+/g, '-'); // "About Us" -> "about-us"
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setIsMenuOpen(false);
-  };
+  switch (section) {
+    case 'About Us':
+      navigate('/about');
+      break;
+    case 'Contact Us':
+      navigate('/contact');
+      break;
+    case 'Terms':
+      navigate('/terms');
+      break;
+    case 'Privacy Policy':
+      navigate('/privacy');
+      break;
+    case 'Disclaimer':
+      navigate('/disclaimer');
+      break;
+    default:
+      const id = section.toLowerCase().replace(/\s+/g, '-');
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+  }
+  setIsMenuOpen(false);
+};
 
-  const navLinks = ['About Us', 'Contact Us', 'Terms', 'Privacy Policy', 'Declaimer'];
+
+  const navLinks = ['About Us', 'Contact Us', 'Terms', 'Privacy Policy', 'Disclaimer'];
 
   return (
     <header>
@@ -36,7 +56,7 @@ export default function Header() {
           transition={{ delay: 0.4, type: 'spring', stiffness: 100 }}
           onClick={() => handleNavClick('About Us')}
         >
-          <img src="/logo.jpg" alt="Logo" className="h-10 rounded-sm " />
+          <img src="/logo.png" alt="Logo" className="h-10 rounded-sm " />
         </motion.div>
 
         {/* Desktop Links */}
@@ -100,3 +120,4 @@ export default function Header() {
     </header>
   );
 }
+

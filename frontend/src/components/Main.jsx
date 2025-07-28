@@ -29,43 +29,6 @@ export default function Main() {
         </motion.div>
       </motion.div>
 
-      {/* Who Can Join REVA Section */}
-      <motion.div 
-        className="max-w-4xl mx-auto mt-0 px-4 sm:px-6 text-center"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <h2 className="text-3xl sm:text-3xl font-bold mb-4 text-[#0054A5]">
-          Who Can Join REVA?
-        </h2>
-        <p className="text-gray-300 mb-6">
-          REVA brings together all key players of the real estate industry in one place.<br />
-          We live in a world where real connections are fading. REVA bridges this gap through technology, events, and networking experiences.
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left text-sm sm:text-base text-white/90">
-          {[
-            "Real Estate Agents",
-            "Developers & Builders",
-            "Banking & Financial Services",
-            "Investors & Asset Managers",
-            "Advocates & Legal Professionals",
-            "Architects & Designers",
-            "Engineers & Technical Consultants",
-            "Chartered Accountants & Auditors",
-            "Building Material Suppliers",
-            "PropTech & Real Estate Services",
-            "Project & Construction Managers",
-            "Others / Miscellaneous",
-          ].map((role, index) => (
-            <div key={index} className="bg-white/10 p-3 rounded-lg hover:bg-white/20 transition">
-              {role}
-            </div>
-          ))}
-        </div>
-      </motion.div>
-
       {/* Logo and Tagline Section */}
       <motion.div 
         className="text-center my-14 px-2"
@@ -78,7 +41,7 @@ export default function Main() {
           animate={{ rotate: [0, 10, -10, 0] }}
           transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
         >
-          <img src="logo.jpg" className="rounded-md w-[80px] sm:w-[90px] md:w-[100px]" alt="Logo" />
+          <img src="logo3.jpg" className="rounded-md w-[80px] sm:w-[90px] md:w-[100px]" alt="Logo" />
         </motion.div>
         <motion.h1 
           className="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug sm:leading-snug md:leading-snug"

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -17,61 +18,45 @@ const itemVariants = {
 };
 
 export default function Disclaimer() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <section
-      className="flex items-center justify-center px-4 py-16 bg-black min-h-screen"
       id="disclaimer"
+      className="min-h-screen flex items-center justify-center px-6 py-20 bg-black"
     >
       <motion.div
-        className="w-full max-w-6xl rounded-3xl p-8 md:p-12 text-white bg-gradient-to-r from-black via-[#1c1c1e] to-[#002c5b]"
+        className="w-full max-w-5xl bg-black p-10 md:p-16 text-white shadow-lg"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
+        {/* Heading */}
         <motion.h2
-          className="text-3xl md:text-4xl font-bold mb-6 text-center"
+          className="text-4xl md:text-5xl font-bold text-center mb-8"
           variants={itemVariants}
         >
-          Disclaimer
+          Legal <span className="text-blue-400">Disclaimer</span>
         </motion.h2>
 
-        <motion.p
-          className="text-xl font-semibold text-center mb-4 text-blue-300"
-          variants={itemVariants}
-        >
-          Important Information Regarding REVA Platform
+        {/* Disclaimer Text */}
+        <motion.p className="text-lg text-gray-300 mb-6" variants={itemVariants}>
+          The information provided on the <strong>REVA</strong> platform is for general informational purposes only. While we strive to ensure accuracy and timeliness, REVA and its affiliates make no representations or warranties regarding the completeness, reliability, or suitability of any information, products, or services.
         </motion.p>
 
-        <motion.p
-          className="text-lg font-medium text-center mb-8 text-gray-200"
-          variants={itemVariants}
-        >
-          Please read this disclaimer carefully before using our services.
+        <motion.p className="text-lg text-gray-300 mb-6" variants={itemVariants}>
+          REVA does not provide financial, legal, or professional advice. Users should conduct their own due diligence before making any real estate or business decisions. REVA cannot be held liable for losses, damages, or disruptions arising from platform usage or third-party content.
         </motion.p>
 
-        <div className="space-y-5 text-[17px] font-medium leading-relaxed text-gray-300">
-          <motion.p variants={itemVariants}>
-            The information provided on the REVA platform is for general informational purposes only. While we strive to ensure accuracy and timeliness, REVA and its affiliates make no representations or warranties regarding the completeness, reliability, or suitability of any information, products, or services.
-          </motion.p>
-
-          <motion.p variants={itemVariants}>
-            REVA does not provide financial, legal, or professional advice. Users should conduct their own due diligence before making any real estate or business decisions.
-          </motion.p>
-
-          <motion.p variants={itemVariants}>
-            REVA cannot be held liable for losses, damages, or disruptions arising from platform usage or third-party content.
-          </motion.p>
-
-          <motion.p
-            className="pt-4 text-sm text-blue-400"
-            variants={itemVariants}
-          >
-            For further clarity, please refer to our full disclaimer{" "}
-            <a href="#" className="underline hover:text-blue-200">
-              here
-            </a>.
-          </motion.p>
-        </div>
+        {/* Footer Link */}
+        <motion.p className="text-center text-gray-300" variants={itemVariants}>
+          For further clarity, please{" "}
+          <a href="#" className="text-blue-400 underline hover:text-blue-200">
+            refer to our full disclaimer here
+          </a>.
+        </motion.p>
       </motion.div>
     </section>
   );

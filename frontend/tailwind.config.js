@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       animation: {
-        fadeIn: 'fadeIn 0.8s ease-in-out forwards',  // <- Add forwards to retain final state
+        fadeIn: 'fadeIn 0.8s ease-in-out forwards', // Retains final state
       },
       keyframes: {
         fadeIn: {
@@ -15,7 +15,13 @@ export default {
           '100%': { opacity: '1' },
         },
       },
+      backdropBlur: {
+        xs: '2px',
+        sm: '4px',
+        md: '6px',
+      },
     },
   },
   plugins: [],
 }
+

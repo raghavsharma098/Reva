@@ -65,7 +65,7 @@ export default function Footer() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
         >
-          <img src="/logo.jpg" alt="REVA Logo" className="h-10 rounded-md" />
+          <img src="/logo.png" alt="REVA Logo" className="h-10 rounded-md" />
           <h1 className="text-2xl font-bold">REVA</h1>
           <p className="text-gray-400 text-sm leading-tight">
             Empower your real estate journey<br className="hidden sm:block" />

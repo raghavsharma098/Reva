@@ -69,7 +69,7 @@ export default function AppStyleContactDemo() {
           />
         </motion.div>
 
-        {/* Contact Options */}
+        {/* Contact Box */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -95,25 +95,30 @@ export default function AppStyleContactDemo() {
 
           {/* Contact Buttons */}
           <div className="space-y-4">
-            <a
-              href="tel:+919876543210"
-              className="flex items-center justify-center gap-3 w-full bg-gradient-to-r from-[#0070B8] to-[#005a91] text-white font-bold py-3 rounded-full hover:opacity-90 transition duration-300"
-            >
-              <Phone size={18} /> Call Us
-            </a>
+            {/* Call & Email Row */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="tel:+919876543210"
+                className="flex items-center justify-center gap-2 flex-1 bg-gradient-to-r from-[#0070B8] to-[#005a91] text-white font-semibold py-3 rounded-xl shadow-md hover:scale-105 transition-transform"
+              >
+                <Phone size={18} /> Call Us
+              </a>
+              <a
+                href="mailto:info@yourdomain.com"
+                className="flex items-center justify-center gap-2 flex-1 bg-gradient-to-r from-[#0070B8] to-[#005a91] text-white font-semibold py-3 rounded-xl shadow-md hover:scale-105 transition-transform"
+              >
+                <Mail size={18} /> Email Us
+              </a>
+            </div>
+
+            {/* WhatsApp Button */}
             <a
               href="https://wa.me/919876543210"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 w-full bg-[#25D366] text-black font-bold py-3 rounded-full hover:opacity-90 transition duration-300"
+              className="flex items-center justify-center gap-2 w-full bg-[#25D366] text-black font-semibold py-3 rounded-xl shadow-md hover:scale-105 transition-transform"
             >
-              <MessageCircle size={18} /> WhatsApp
-            </a>
-            <a
-              href="mailto:info@yourdomain.com"
-              className="flex items-center justify-center gap-3 w-full bg-[#0070B8] text-white font-bold py-3 rounded-full hover:opacity-90 transition duration-300"
-            >
-              <Mail size={18} /> Email Us
+              <MessageCircle size={18} /> WhatsApp Us
             </a>
           </div>
         </motion.div>

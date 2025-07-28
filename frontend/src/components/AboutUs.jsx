@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Users, Building2, Handshake } from "lucide-react";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -19,62 +20,76 @@ const itemVariants = {
 export default function AboutUs() {
   return (
     <section
-      className="flex items-center justify-center px-4 py-16 bg-black min-h-screen"
       id="about"
+      className="min-h-screen bg-black text-white py-20 px-6 md:px-12 flex items-center justify-center"
     >
       <motion.div
-        className="w-full max-w-6xl rounded-3xl p-8 md:p-12 text-white bg-gradient-to-r from-black via-[#1c1c1e] to-[#002c5b]"
+        className="max-w-5xl w-full p-10 md:p-16 rounded-3xl shadow-lg"
         initial="hidden"
         animate="visible"
         variants={containerVariants}
       >
         <motion.h2
-          className="text-3xl md:text-4xl font-bold mb-6 text-center"
+          className="text-4xl md:text-5xl font-bold text-center mb-6 text-white"
           variants={itemVariants}
         >
-          About Us
+          About <span className="text-blue-400">REVA</span>
         </motion.h2>
 
         <motion.p
-          className="text-xl font-semibold text-center mb-4 text-blue-300"
+          className="text-center text-xl md:text-2xl font-medium text-blue-300 mb-10"
           variants={itemVariants}
         >
-          REVA - Real Estate Verified Alliances.
+          Real Estate Verified Alliances
         </motion.p>
 
-        <motion.p
-          className="text-lg font-medium text-center mb-8 text-gray-200"
-          variants={itemVariants}
-        >
-          India’s First Verified Real Estate Professional Networking App — Agents, Developers, Professionals & Investors on One Platform.
-        </motion.p>
+        <div className="grid md:grid-cols-3 gap-8 mb-12 text-gray-300">
+          <motion.div
+            className="flex flex-col items-center text-center"
+            variants={itemVariants}
+          >
+            <Users className="w-10 h-10 mb-3 text-blue-400" />
+            <h4 className="text-lg font-semibold text-white mb-1">Professionals</h4>
+            <p>Agents, developers, and investors — all on one trusted platform.</p>
+          </motion.div>
 
-        <div className="space-y-5 text-[17px] font-medium leading-relaxed text-gray-300">
+          <motion.div
+            className="flex flex-col items-center text-center"
+            variants={itemVariants}
+          >
+            <Building2 className="w-10 h-10 mb-3 text-green-400" />
+            <h4 className="text-lg font-semibold text-white mb-1">Verified Network</h4>
+            <p>Authentic connections with real estate stakeholders across India.</p>
+          </motion.div>
+
+          <motion.div
+            className="flex flex-col items-center text-center"
+            variants={itemVariants}
+          >
+            <Handshake className="w-10 h-10 mb-3 text-yellow-400" />
+            <h4 className="text-lg font-semibold text-white mb-1">Collaboration</h4>
+            <p>Offline & online synergy to boost business and visibility.</p>
+          </motion.div>
+        </div>
+
+        <div className="space-y-5 text-[17px] leading-relaxed text-gray-300">
           <motion.p variants={itemVariants}>
-            <strong className="text-white">REVA</strong> (Real Estate Verified Alliances) is India’s pioneering platform designed to bring together real estate agents, developers, professionals, and investors on a single, trusted network.
+            <strong className="text-white">REVA</strong> is India’s first verified real estate networking platform that bridges the gap between agents, developers, and investors through powerful tools and genuine connections.
           </motion.p>
 
           <motion.p variants={itemVariants}>
-            Our mission is to organize and empower the Indian real estate ecosystem by fostering authentic connections, streamlining collaboration, and enhancing business opportunities — both online and offline.
-          </motion.p>
-
-          <motion.p variants={itemVariants}>
-            Founded by industry experts and featured by <strong className="text-white">LEXORA Intelligence & Legal Studies LLP</strong>, REVA leverages innovative technology and curated experiences to create a vibrant, secure, and growth-focused community for real estate stakeholders across India.
+            Powered by <strong className="text-white">LEXORA Intelligence & Legal Studies LLP</strong>, REVA is built on innovation, trust, and a deep understanding of the real estate industry.
           </motion.p>
 
           <motion.p
-            className="font-semibold italic text-blue-400"
+            className="italic font-semibold text-blue-400"
             variants={itemVariants}
           >
             “Connecting Real Estate Professionals Like Never Before.”
           </motion.p>
 
           <motion.p variants={itemVariants}>
-            REVA features a hybrid mobile app interface that helps people feel more connected — both online and offline.
-          </motion.p>
-
-          <motion.p variants={itemVariants}>
-            At REVA, we redefine the way real estate professionals connect, collaborate, and grow!
+            From AI-powered matchmaking to hybrid event networking, REVA is redefining how the Indian real estate community connects, collaborates, and grows.
           </motion.p>
         </div>
       </motion.div>
