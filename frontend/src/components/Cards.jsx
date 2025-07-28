@@ -3,24 +3,28 @@ import { motion } from "framer-motion";
 
 const benefits = [
   {
-    title: "Authentic Connections",
-    description: "Build genuine relationships with like-minded individuals.",
-    icon: "👥",
+    title: "Verified & Authentic Networking",
+    description:
+      "Connect confidently with verified, authentic users on the platform. E-KYC Verification ensures trust and security to build your real estate network with trusted professionals.",
+    icon: "🔒",
   },
   {
     title: "Personalized Experience",
-    description: "Tailored content and recommendations just for you.",
+    description:
+      "Tailored content and recommendations just for you. Use our Smart Contact Manager to organize and manage your real estate connections effortlessly.",
     icon: "✨",
   },
   {
-    title: "Global Reach",
-    description: "Connect with people across 50+ countries effortlessly.",
-    icon: "🌐",
+    title: "Authentic Connections",
+    description:
+      "Build genuine relationships with like-minded individuals. Get event invitations based on your preferences for meetings & collaborations.",
+    icon: "🤝",
   },
   {
-    title: "Community Support",
-    description: "Join thriving communities around your interests.",
-    icon: "😊",
+    title: "Professional Recognition",
+    description:
+      "Earn digital badges, credibility, and certifications as you contribute, collaborate, and grow within the REVA community.",
+    icon: "🏅",
   },
 ];
 
@@ -30,13 +34,13 @@ export default function WhyChooseCreonex() {
       {/* Section Heading */}
       <div className="text-center mb-16">
         <p className="text-sm bg-[#1C1C1C] px-4 py-2 rounded-full inline-block mb-3">
-          ★ Our Benefits
+          ★ Discover REVA Benefits
         </p>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
-          Discover Appit’s Benefits
+          Unlock the World of Real Estate Networking
         </h2>
         <p className="text-gray-400 mt-4 max-w-2xl mx-auto text-sm sm:text-base">
-          Unlock a world of meaningful connections, tailored experiences, and seamless social interaction.
+          Unlock real estate's world of meaningful connections, tailored experiences, and seamless networking. Connect online through the unique hybrid experience with the REVA app and offline via exclusive real estate events in major Indian cities.
         </p>
       </div>
 

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Image, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,9 +10,15 @@ export default function Header() {
   };
 
   const handleNavClick = (section) => {
-    alert(`Navigating to ${section}`);
+    const id = section.toLowerCase().replace(/\s+/g, '-'); // "About Us" -> "about-us"
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
     setIsMenuOpen(false);
   };
+
+  const navLinks = ['About Us', 'Contact Us', 'Terms', 'Privacy Policy', 'Declaimer'];
 
   return (
     <header>
@@ -20,26 +26,22 @@ export default function Header() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="fixed top-0 left-0 w-full flex justify-between items-center bg-black px-4 py-4 text-white shadow-md transition-all duration-300 ease-in-out h-20 z-50"
+        className="fixed top-0 left-0 w-full flex justify-between items-center bg-black px-4 py-4 text-white shadow-md h-20 z-50"
       >
-        {/* Logo with animation */}
+        {/* Logo */}
         <motion.div
           className="flex items-center ml-10 cursor-pointer"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.4, type: 'spring', stiffness: 100 }}
-          onClick={() => alert('Logo clicked!')}
+          onClick={() => handleNavClick('About Us')}
         >
-          <img
-            src="/logo.jpg"
-            alt="Appit Logo"
-            className="h-10"
-          />
+          <img src="/logo.jpg" alt="Logo" className="h-10 rounded-sm " />
         </motion.div>
 
-        {/* Desktop Nav Links */}
+        {/* Desktop Links */}
         <ul className="hidden lg:flex space-x-8 text-base font-medium text-white">
-          {['Benefits', 'Features', 'Pricing', 'Testimonials', "FAQ's"].map((link, index) => (
+          {navLinks.map((link, index) => (
             <motion.li
               key={link}
               onClick={() => handleNavClick(link)}
@@ -53,7 +55,7 @@ export default function Header() {
           ))}
         </ul>
 
-        {/* CTA Button */}
+        {/* Join Button */}
         <motion.div
           className="hidden lg:flex"
           initial={{ opacity: 0, scale: 0.8 }}
@@ -65,17 +67,14 @@ export default function Header() {
           </button>
         </motion.div>
 
-        {/* Mobile Hamburger Menu */}
+        {/* Mobile Menu Icon */}
         <div className="lg:hidden flex items-center">
-          <button
-            onClick={toggleMenu}
-            className="text-white hover:text-[#F7931E] focus:outline-none"
-          >
+          <button onClick={toggleMenu} className="text-white hover:text-[#F7931E]">
             {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
         </div>
 
-        {/* Mobile Nav Menu with Animation */}
+        {/* Mobile Menu */}
         {isMenuOpen && (
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -83,7 +82,7 @@ export default function Header() {
             transition={{ duration: 0.3 }}
             className="absolute top-20 right-4 bg-[#0C1A30] text-white p-5 rounded-lg shadow-lg space-y-4 w-48"
           >
-            {['Benefits', 'Features', 'Pricing', 'Testimonials', "FAQ's", 'Join Waitlist'].map((link, index) => (
+            {[...navLinks, 'Join Waitlist'].map((link, index) => (
               <motion.div
                 key={link}
                 className="cursor-pointer hover:text-[#F7931E]"

@@ -6,44 +6,13 @@ import {
   Calendar,
   Paintbrush,
   Smile,
+  Phone,
+  Mail,
+  MessageCircle,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { useState } from "react";
 
 export default function AppStyleContactDemo() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus(null);
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-      const result = await response.json();
-      if (response.ok) {
-        setSubmitStatus({ type: 'success', message: result.message });
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        setSubmitStatus({ type: 'error', message: result.message || 'Failed to send message' });
-      }
-    } catch {
-      setSubmitStatus({ type: 'error', message: 'Network error. Please try again.' });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   const features = [
     "Face ID check before consultation",
     "Instant calendar sync & reminders",
@@ -67,7 +36,7 @@ export default function AppStyleContactDemo() {
           transition: { staggerChildren: 0.2, duration: 0.8, ease: "easeOut" },
         },
       }}
-      className="min-h-screen bg-black text-white px-4 sm:px-8 py-16 overflow-hidden"
+      className="min-h-screen bg-black text-white px-4 sm:px-8 py-16 overflow-hidden relative"
     >
       {/* Floating icons - only on large screens */}
       <motion.div
@@ -87,21 +56,20 @@ export default function AppStyleContactDemo() {
       </motion.div>
 
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
-        {/* Image */}
-      <motion.div
-        animate={{ y: [0, -10, 0] }}
-        transition={{ duration: 3, repeat: Infinity }}
-        className="w-full lg:w-1/2 h-full flex justify-center items-center"
-      >
-        <img
-          src="/3.png"
-          alt="App UI Preview"
-          className="w-full h-full max-h-[600px] object-contain rounded-2xl shadow-xl"
-        />
-      </motion.div>
+        {/* Image Section */}
+        <motion.div
+          animate={{ y: [0, -10, 0] }}
+          transition={{ duration: 3, repeat: Infinity }}
+          className="w-full lg:w-1/2 h-full flex justify-center items-center"
+        >
+          <img
+            src="/2.png"
+            alt="App UI Preview"
+            className="w-full h-full max-h-[600px] object-contain rounded-2xl shadow-xl"
+          />
+        </motion.div>
 
-
-        {/* Contact Form */}
+        {/* Contact Options */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -125,60 +93,31 @@ export default function AppStyleContactDemo() {
             ))}
           </ul>
 
-          <form className="space-y-4" onSubmit={handleSubmit}>
-            {submitStatus && (
-              <div
-                className={`p-3 rounded-lg text-sm ${
-                  submitStatus.type === 'success'
-                    ? 'bg-green-900 text-green-200 border border-green-700'
-                    : 'bg-red-900 text-red-200 border border-red-700'
-                }`}
-              >
-                {submitStatus.message}
-              </div>
-            )}
-
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Your Name"
-              required
-              className="w-full bg-[#2B2E33] text-white placeholder:text-gray-400 border border-[#0070B8] rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[#0070B8] transition"
-            />
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Your Email"
-              required
-              className="w-full bg-[#2B2E33] text-white placeholder:text-gray-400 border border-[#0070B8] rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[#0070B8] transition"
-            />
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="Your Message"
-              rows={4}
-              required
-              className="w-full bg-[#2B2E33] text-white placeholder:text-gray-400 border border-[#0070B8] rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[#0070B8] transition"
-            />
-
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-[#0070B8] to-[#2B2E33] text-white font-bold py-3 rounded-full hover:opacity-90 transition duration-300 disabled:opacity-50"
+          {/* Contact Buttons */}
+          <div className="space-y-4">
+            <a
+              href="tel:+919876543210"
+              className="flex items-center justify-center gap-3 w-full bg-gradient-to-r from-[#0070B8] to-[#005a91] text-white font-bold py-3 rounded-full hover:opacity-90 transition duration-300"
             >
-              {isSubmitting ? 'Sending...' : 'Send Message'}
-            </button>
-          </form>
+              <Phone size={18} /> Call Us
+            </a>
+            <a
+              href="https://wa.me/919876543210"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-3 w-full bg-[#25D366] text-black font-bold py-3 rounded-full hover:opacity-90 transition duration-300"
+            >
+              <MessageCircle size={18} /> WhatsApp
+            </a>
+            <a
+              href="mailto:info@yourdomain.com"
+              className="flex items-center justify-center gap-3 w-full bg-[#0070B8] text-white font-bold py-3 rounded-full hover:opacity-90 transition duration-300"
+            >
+              <Mail size={18} /> Email Us
+            </a>
+          </div>
         </motion.div>
       </div>
-
-      {/* Notification box */}
-      
     </motion.section>
   );
 }

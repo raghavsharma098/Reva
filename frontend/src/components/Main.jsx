@@ -4,7 +4,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function Main() {
   return (
-    <div className="bg-black text-white min-h-screen px-4 sm:px-6 md:px-10 py-10 font-sans">
+    <div className="bg-black text-white min-h-screen px-4 sm:px-6 md:px-10 py-10 font-sans mt-0">
+
       {/* Trusted Logos Section */}
       <motion.div 
         className="text-center mb-16"
@@ -12,9 +13,6 @@ export default function Main() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <p className="text-lg sm:text-xl md:text-2xl text-gray-300 font-medium mb-6">
-          Trusted by 1000+ businesses across the world
-        </p>
         <motion.div 
           className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 grayscale opacity-90"
           initial="hidden"
@@ -28,18 +26,44 @@ export default function Main() {
             }
           }}
         >
-          {["Velocity", "Synergy", "Enigma", "Spectrum", "Lumina", "Vortex"].map((name, index) => (
-            <motion.span
-              key={index}
-              className="text-gray-400 text-sm sm:text-base md:text-lg font-semibold hover:text-white cursor-default transition-colors duration-200"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-            >
-              {name}
-            </motion.span>
-          ))}
         </motion.div>
+      </motion.div>
+
+      {/* Who Can Join REVA Section */}
+      <motion.div 
+        className="max-w-4xl mx-auto mt-0 px-4 sm:px-6 text-center"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-3xl sm:text-3xl font-bold mb-4 text-[#0054A5]">
+          Who Can Join REVA?
+        </h2>
+        <p className="text-gray-300 mb-6">
+          REVA brings together all key players of the real estate industry in one place.<br />
+          We live in a world where real connections are fading. REVA bridges this gap through technology, events, and networking experiences.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left text-sm sm:text-base text-white/90">
+          {[
+            "Real Estate Agents",
+            "Developers & Builders",
+            "Banking & Financial Services",
+            "Investors & Asset Managers",
+            "Advocates & Legal Professionals",
+            "Architects & Designers",
+            "Engineers & Technical Consultants",
+            "Chartered Accountants & Auditors",
+            "Building Material Suppliers",
+            "PropTech & Real Estate Services",
+            "Project & Construction Managers",
+            "Others / Miscellaneous",
+          ].map((role, index) => (
+            <div key={index} className="bg-white/10 p-3 rounded-lg hover:bg-white/20 transition">
+              {role}
+            </div>
+          ))}
+        </div>
       </motion.div>
 
       {/* Logo and Tagline Section */}
@@ -63,7 +87,7 @@ export default function Main() {
           transition={{ duration: 1.2 }}
         >
           Empowering authentic connections for a <br className="hidden sm:block" />
-          vibrant social experience.
+          vibrant vibrant professional Networking experience.
         </motion.h1>
       </motion.div>
 
@@ -82,9 +106,9 @@ export default function Main() {
         }}
       >
         {[
-          { count: "500k+", text: "Shared moments and stories every month" },
-          { count: "200k+", text: "Communities thriving across diverse interests" },
-          { count: "50+", text: "Countries where Appit is growing strong" },
+          { count: "10k+", text: "Shared Real estate Requirement online every day on REVA App." },
+          { count: "5k+", text: "Thriving across 12 Key Real estate Stakeholders Building Connections." },
+          { count: "9+", text: "Cities across 5 states, fostering real, impactful relationships." },
         ].map((item, i) => (
           <motion.div 
             key={i}
