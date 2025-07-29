@@ -15,7 +15,7 @@ export default function Footer() {
     {
       icon: FaInstagram,
       name: "Instagram",
-      href: "https://instagram.com/revaindiaofficial",
+      href: "https://www.instagram.com/lexora.intelligence/profilecard/?igsh=MTBmZ3lweHJldTFxNg==",
     },
     {
       icon: FaLinkedinIn,
@@ -25,7 +25,7 @@ export default function Footer() {
     {
       icon: FaFacebookF,
       name: "Facebook",
-      href: "https://facebook.com/revaindia",
+      href: "https://www.facebook.com/share/1758fThHsj/?mibextid=qi2Omg",
     },
     // {
     //   icon: FaXTwitter,

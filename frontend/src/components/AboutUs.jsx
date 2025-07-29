@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { Users, Building2, Handshake } from "lucide-react";
+import Header from "./Header";
+import Footer from "./Footer";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -19,6 +21,8 @@ const itemVariants = {
 
 export default function AboutUs() {
   return (
+    <>
+    <Header/>
     <section
       id="about"
       className="min-h-screen bg-black text-white py-20 px-6 md:px-12 flex items-center justify-center"
@@ -93,6 +97,9 @@ export default function AboutUs() {
           </motion.p>
         </div>
       </motion.div>
+      
     </section>
+    <Footer/>
+    </>
   );
 }

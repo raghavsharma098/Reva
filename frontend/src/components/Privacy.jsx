@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
+import Header from "./Header";
+import Footer from "./Footer";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -23,6 +25,8 @@ export default function PrivacyPolicy() {
   }, []);
 
   return (
+    <>
+    <Header/>
     <section
       id="privacy"
       className="min-h-screen flex items-center justify-center px-6 py-20 bg-black"
@@ -93,5 +97,7 @@ export default function PrivacyPolicy() {
         </motion.p>
       </motion.div>
     </section>
+    <Footer/>
+    </>
   );
 }

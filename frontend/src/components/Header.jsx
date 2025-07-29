@@ -54,7 +54,7 @@ export default function Header() {
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.4, type: 'spring', stiffness: 100 }}
-          onClick={() => handleNavClick('About Us')}
+          onClick={() => handleNavClick('/')}
         >
           <img src="/logo.png" alt="Logo" className="h-10 rounded-sm " />
         </motion.div>
