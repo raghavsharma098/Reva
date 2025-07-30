@@ -17,11 +17,11 @@ export default function Footer() {
       name: "Instagram",
       href: "https://www.instagram.com/lexora.intelligence/profilecard/?igsh=MTBmZ3lweHJldTFxNg==",
     },
-    // {
-    //   icon: FaLinkedinIn,
-    //   name: "LinkedIn",
-    //   href: "https://linkedin.com/company/reva-india",
-    // },
+    {
+      icon: FaLinkedinIn,
+      name: "LinkedIn",
+      href: "https://linkedin.com/company/reva-india",
+    },
     {
       icon: FaFacebookF,
       name: "Facebook",
@@ -32,11 +32,11 @@ export default function Footer() {
     //   name: "Twitter (X)",
     //   href: "https://twitter.com/revaindia",
     // },
-    {
-      icon: FaYoutube,
-      name: "YouTube",
-      href: "https://youtube.com/@REVAIndia",
-    },
+    // {
+    //   icon: FaYoutube,
+    //   name: "YouTube",
+    //   href: "https://youtube.com/@REVAIndia",
+    // },
     {
       icon: FaWhatsapp,
       name: "WhatsApp Channel",

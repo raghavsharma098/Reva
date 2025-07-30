@@ -56,7 +56,7 @@ export default function Header() {
           transition={{ delay: 0.4, type: 'spring', stiffness: 100 }}
           onClick={() => handleNavClick('/')}
         >
-          <img src="/logo.png" alt="Logo" className="h-10 rounded-sm " />
+          <img src="/logo.png" alt="Logo" className="h-14 rounded-sm " />
         </motion.div>
 
         {/* Desktop Links */}
