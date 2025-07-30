@@ -29,7 +29,7 @@ export default function PrivacyPolicy() {
     <Header/>
     <section
       id="privacy"
-      className="min-h-screen flex items-center justify-center px-6 py-20 bg-black"
+      className="min-h-screen flex items-center justify-center px-6 py-2 bg-black mt-10"
     >
       <motion.div
         className="w-full max-w-5xl bg-black p-10 md:p-16 text-white shadow-lg"

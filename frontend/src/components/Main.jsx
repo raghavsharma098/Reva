@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function Main() {
   return (
-    <div className="bg-black text-white min-h-screen px-4 sm:px-6 md:px-10 py-10 font-sans mt-0">
+    <div className="bg-black text-white min-h-screen px-4 sm:px-6 md:px-10 font-sans mt-0">
 
       {/* Trusted Logos Section */}
       <motion.div 

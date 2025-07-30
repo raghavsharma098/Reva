@@ -36,7 +36,7 @@ export default function ContactUs() {
 
       <section
         id="contact"
-        className="min-h-screen flex items-center justify-center px-6 py-32 bg-black" // py-32 to push below header
+        className="min-h-screen flex items-center justify-center px-6 py-2 bg-black mt-10" // py-32 to push below header
       >
         <motion.div
           className="w-full max-w-5xl bg-black p-10 md:p-16 text-white shadow-lg"
@@ -114,10 +114,10 @@ export default function ContactUs() {
             className="flex justify-center gap-6 text-[#6EC1E4] text-xl mb-6"
             variants={itemVariants}
           >
-            <a href="#" aria-label="LinkedIn"><Linkedin className="hover:text-white" /></a>
+              <a href="#" aria-label="LinkedIn"><Linkedin className="hover:text-white" /></a>
             <a href="https://www.facebook.com/share/1758fThHsj/?mibextid=qi2Omg" aria-label="Facebook"><Facebook className="hover:text-white" /></a>
             <a href="https://www.instagram.com/lexora.intelligence/profilecard/?igsh=MTBmZ3lweHJldTFxNg==" aria-label="Instagram"><Instagram className="hover:text-white" /></a>
-            <a href="#" aria-label="Twitter"><Twitter className="hover:text-white" /></a>
+            {/* <a href="#" aria-label="Twitter"><Twitter className="hover:text-white" /></a> */}
           </motion.div>
 
           {/* Response Note */}

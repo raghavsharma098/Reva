@@ -25,7 +25,7 @@ export default function AboutUs() {
     <Header/>
     <section
       id="about"
-      className="min-h-screen bg-black text-white py-20 px-6 md:px-12 flex items-center justify-center"
+      className="min-h-screen bg-black text-white py-2 px-6 md:px-12 flex items-center justify-center mt-10"
     >
       <motion.div
         className="max-w-5xl w-full p-10 md:p-16 rounded-3xl shadow-lg"

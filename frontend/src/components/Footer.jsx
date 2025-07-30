@@ -17,11 +17,11 @@ export default function Footer() {
       name: "Instagram",
       href: "https://www.instagram.com/lexora.intelligence/profilecard/?igsh=MTBmZ3lweHJldTFxNg==",
     },
-    {
-      icon: FaLinkedinIn,
-      name: "LinkedIn",
-      href: "https://linkedin.com/company/reva-india",
-    },
+    // {
+    //   icon: FaLinkedinIn,
+    //   name: "LinkedIn",
+    //   href: "https://linkedin.com/company/reva-india",
+    // },
     {
       icon: FaFacebookF,
       name: "Facebook",
@@ -42,16 +42,16 @@ export default function Footer() {
       name: "WhatsApp Channel",
       href: "https://whatsapp.com/channel/your channel name", // Update with real URL
     },
-    {
-      icon: FaTelegramPlane,
-      name: "Telegram Channel",
-      href: "https://t.me/yourtelegramchannel", // Update with real URL
-    },
+    // {
+    //   icon: FaTelegramPlane,
+    //   name: "Telegram Channel",
+    //   href: "https://t.me/yourtelegramchannel", // Update with real URL
+    // },
   ];
 
   return (
     <motion.footer
-      className="bg-black text-white py-14 px-4 sm:px-10 md:px-20"
+      className="bg-black text-white py-1 px-1"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -90,12 +90,12 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
         >
-          <a href="#" className="hover:underline">About Us</a>
-          <a href="#" className="hover:underline">Contact Us</a>
-          <a href="#" className="hover:underline">Terms</a>
-          <a href="#" className="hover:underline">Privacy Policy</a>
-          <a href="#" className="hover:underline">Disclaimer</a>
-          <a href="#" className="hover:underline">Waitlist</a>
+          <a href="/about" className="hover:underline">About Us</a>
+          <a href="/contact" className="hover:underline">Contact Us</a>
+          <a href="terms" className="hover:underline">Terms</a>
+          <a href="/privacy" className="hover:underline">Privacy Policy</a>
+          <a href="/disclaimer" className="hover:underline">Disclaimer</a>
+          <a href="/" className="hover:underline">Waitlist</a>
         </motion.div>
 
         {/* Social Media Section */}
