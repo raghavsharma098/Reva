@@ -65,8 +65,7 @@ export default function Footer() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
         >
-          <img src="/logo.png" alt="REVA Logo" className="h-10 rounded-md" />
-          <h1 className="text-2xl font-bold">REVA</h1>
+          <img src="/logo.png" alt="REVA Logo" className="h-20 rounded-md" />
           <p className="text-gray-400 text-sm leading-tight">
             Empower your real estate journey<br className="hidden sm:block" />
             with trusted alliances.
@@ -95,7 +94,7 @@ export default function Footer() {
           <a href="terms" className="hover:underline">Terms</a>
           <a href="/privacy" className="hover:underline">Privacy Policy</a>
           <a href="/disclaimer" className="hover:underline">Disclaimer</a>
-          <a href="/" className="hover:underline">Waitlist</a>
+          <a href="/" className="hover:underline">Download App</a>
         </motion.div>
 
         {/* Social Media Section */}

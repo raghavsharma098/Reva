@@ -70,7 +70,7 @@ const roles = [
 
 export default function WhoCanJoinReva() {
   return (
-    <section className="relative z-10 bg-black text-white py-20 px-4 sm:px-8 overflow-hidden">
+    <section className="relative z-10 bg-black text-white py-0 px-4 sm:px-8 overflow-hidden">
       <motion.div
         className="max-w-6xl mx-auto text-center"
         initial={{ opacity: 0, y: 40 }}

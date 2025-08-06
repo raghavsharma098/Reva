@@ -29,7 +29,7 @@ export default function Disclaimer() {
       <Header />
       <section
         id="disclaimer"
-        className="min-h-screen flex items-center justify-center px-2 py-2 bg-black"
+        className=" mt-20 flex items-center justify-center px-2 py-2 bg-black"
       >
         <motion.div
           className="w-full max-w-5xl bg-black md:p-12 text-white shadow-lg"

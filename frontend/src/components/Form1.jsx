@@ -36,7 +36,7 @@ export default function AppStyleContactDemo() {
           transition: { staggerChildren: 0.2, duration: 0.8, ease: "easeOut" },
         },
       }}
-      className="min-h-screen bg-black text-white px-4 sm:px-8 py-16 overflow-hidden relative"
+      className="min-h-screen bg-black text-white px-4 sm:px-8 py-8 overflow-hidden relative"
     >
       {/* Floating icons - only on large screens */}
       <motion.div
@@ -55,7 +55,7 @@ export default function AppStyleContactDemo() {
         ))}
       </motion.div>
 
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-0">
         {/* Image Section */}
         <motion.div
           animate={{ y: [0, -10, 0] }}
@@ -75,7 +75,7 @@ export default function AppStyleContactDemo() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="w-full max-w-xl bg-[#1E1E1E] rounded-2xl p-6 sm:p-8 shadow-2xl"
+          className="w-full max-w-xl bg-[#1E1E1E] rounded-2xl p-6 sm:p-16 shadow-2xl mt-3"
         >
           <h3 className="text-[#0070B8] font-semibold text-lg mb-1">
             Get in Touch

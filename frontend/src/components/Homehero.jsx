@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 
 export default function HomeHero() {
   return (
-    <section className="relative bg-black text-white overflow-hidden py-20 px-4 sm:px-8 lg:px-24 mt-10">
+    <section className="relative bg-black text-white overflow-hidden py-20 px-4 sm:px-8 mt-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center relative z-10">
 
         {/* Left Side - Text */}
-        <div className="space-y-6 text-center md:text-left px-4 sm:px-6 md:px-0 ml-10">
+        <div className="space-y-6 text-center md:text-left px-4 sm:px-6 md:px-0 ml-5">
           <p className="text-sm text-gray-300 font-medium">
             ✨ Featured by <span className="text-white font-semibold">Lexora Networks</span>
           </p>
@@ -30,22 +30,23 @@ export default function HomeHero() {
           <p className="text-lg font-semibold text-[#0054A5]">Connect. Collaborate. Grow with REVA.</p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row sm:justify-center md:justify-start gap-4 pt-6">
-            <a
-              href="#"
-              className="bg-[#0054A5] text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition flex items-center gap-2"
-            >
-              <img src="/apple-logo.png" alt="Apple Store" className="w-5 h-5" />
-              App Store
-            </a>
-            <a
-              href="#"
-              className="bg-white text-black font-semibold px-6 py-3 rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition flex items-center gap-2"
-            >
-              <img src="/app.png" alt="Google Play" className="w-5 h-5" />
-              Google Play
-            </a>
-          </div>
+          <div className="flex flex-col sm:flex-row gap-3 pt-5 w-full max-w-md mx-auto sm:mx-0">
+          <a
+            href="#"
+            className="flex-1 bg-[#0054A5] text-white text-sm font-semibold px-4 py-4 rounded-lg shadow-md hover:scale-105 hover:shadow-lg transition flex items-center justify-center gap-2"
+          >
+            <img src="/apple-logo.png" alt="Apple Store" className="w-4 h-4" />
+            App Store
+          </a>
+          <a
+            href="#"
+            className="flex-1 bg-white text-black text-sm font-semibold px-4 py-4 rounded-lg shadow-md hover:scale-105 hover:shadow-lg transition flex items-center justify-center gap-2"
+          >
+            <img src="/app.png" alt="Google Play" className="w-4 h-4" />
+            Google Play
+          </a>
+        </div>
+
         </div>
 
         {/* Right Side - Phone Images */}

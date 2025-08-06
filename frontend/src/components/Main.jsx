@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default function Main() {
   return (
-    <div className="bg-black text-white min-h-screen px-4 sm:px-6 md:px-10 font-sans mt-0">
+    <div className="bg-black text-white px-4 sm:px-6 md:px-10 font-sans mt-1">
 
       {/* Trusted Logos Section */}
       <motion.div 
@@ -31,32 +31,54 @@ export default function Main() {
 
       {/* Logo and Tagline Section */}
       <motion.div 
-        className="text-center my-14 px-2"
+        className="text-center px-2"
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1 }}
       >
         <motion.div 
-          className="w-[120px] sm:w-[140px] md:w-[150px] h-[120px] sm:h-[140px] md:h-[150px] rounded-full mx-auto bg-white flex items-center justify-center mb-8 shadow-lg"
-          animate={{ rotate: [0, 10, -10, 0] }}
-          transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-        >
-          <img src="logo3.jpg" className="rounded-md w-[80px] sm:w-[90px] md:w-[100px]" alt="Logo" />
-        </motion.div>
+      className="w-[120px] sm:w-[140px] md:w-[150px] h-[120px] sm:h-[140px] md:h-[150px] rounded-full mx-auto bg-white flex items-center justify-center mb-8 shadow-xl"
+      animate={{
+        rotate: [0, 5, -5, 0],
+        scale: [1, 1.05, 1],
+        y: [0, -6, 0], // subtle up-down float
+        boxShadow: [
+          "0 0 10px rgba(0,0,0,0.15)",
+          "0 0 20px rgba(0,0,0,0.25)",
+          "0 0 10px rgba(0,0,0,0.15)"
+        ],
+      }}
+      transition={{
+        repeat: Infinity,
+        duration: 5,
+        ease: "easeInOut",
+      }}
+    >
+      <motion.img
+        src="logo4.jpg"
+        alt="Logo"
+        className="rounded-md w-[80px] sm:w-[90px] md:w-[100px]"
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1 }}
+        whileHover={{ scale: 1.1, rotate: 5 }}
+      />
+    </motion.div>
+
         <motion.h1 
           className="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug sm:leading-snug md:leading-snug"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2 }}
         >
-          Empowering authentic connections for a <br className="hidden sm:block" />
-          vibrant vibrant professional Networking experience.
+          Empowering authentic connections for a <br className="hidden sm:block mt-20" />
+          vibrant professional Networking experience.
         </motion.h1>
       </motion.div>
 
       {/* Stats Section */}
       <motion.div 
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 max-w-6xl mx-auto text-center text-white/90 mt-16 px-2"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 max-w-6xl mx-auto text-center text-white/90 mt-5 px-2"
         initial="hidden"
         animate="visible"
         variants={{

@@ -11,34 +11,37 @@ export default function Header() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const handleNavClick = (section) => {
-  switch (section) {
-    case 'About Us':
-      navigate('/about');
-      break;
-    case 'Contact Us':
-      navigate('/contact');
-      break;
-    case 'Terms':
-      navigate('/terms');
-      break;
-    case 'Privacy Policy':
-      navigate('/privacy');
-      break;
-    case 'Disclaimer':
-      navigate('/disclaimer');
-      break;
-    default:
-      const id = section.toLowerCase().replace(/\s+/g, '-');
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-  }
-  setIsMenuOpen(false);
-};
+    switch (section) {
+      case 'Home':
+        navigate('/');
+        break;
+      case 'About Us':
+        navigate('/about');
+        break;
+      case 'Contact Us':
+        navigate('/contact');
+        break;
+      case 'Terms':
+        navigate('/terms');
+        break;
+      case 'Privacy Policy':
+        navigate('/privacy');
+        break;
+      case 'Disclaimer':
+        navigate('/disclaimer');
+        break;
+      default:
+        const id = section.toLowerCase().replace(/\s+/g, '-');
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+    setIsMenuOpen(false);
+  };
 
-
-  const navLinks = ['About Us', 'Contact Us', 'Terms', 'Privacy Policy', 'Disclaimer'];
+  // ✅ "Home" added at the beginning
+  const navLinks = ['Home', 'About Us', 'Contact Us', 'Terms', 'Privacy Policy', 'Disclaimer'];
 
   return (
     <header>
@@ -48,13 +51,13 @@ export default function Header() {
         transition={{ duration: 0.6, ease: 'easeOut' }}
         className="fixed top-0 left-0 w-full flex justify-between items-center bg-black px-4 py-4 text-white shadow-md h-20 z-50"
       >
-        {/* Logo */}
+        {/* ✅ Logo now acts as Home button */}
         <motion.div
           className="flex items-center ml-10 cursor-pointer"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.4, type: 'spring', stiffness: 100 }}
-          onClick={() => handleNavClick('/')}
+          onClick={() => navigate('/')} // ✅ This is your Home route
         >
           <img src="/logo.png" alt="Logo" className="h-14 rounded-sm " />
         </motion.div>
@@ -83,7 +86,7 @@ export default function Header() {
           transition={{ delay: 0.9 }}
         >
           <button className="bg-white text-black px-5 py-2 rounded-md font-semibold hover:bg-gray-200 transition">
-            Join Waitlist
+            Download App
           </button>
         </motion.div>
 
@@ -102,7 +105,7 @@ export default function Header() {
             transition={{ duration: 0.3 }}
             className="absolute top-20 right-4 bg-[#0C1A30] text-white p-5 rounded-lg shadow-lg space-y-4 w-48"
           >
-            {[...navLinks, 'Join Waitlist'].map((link, index) => (
+            {[...navLinks, 'Download App'].map((link, index) => (
               <motion.div
                 key={link}
                 className="cursor-pointer hover:text-[#F7931E]"
@@ -120,4 +123,3 @@ export default function Header() {
     </header>
   );
 }
-

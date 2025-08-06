@@ -29,7 +29,7 @@ export default function TermsAndConditions() {
     <Header/>
     <section
       id="terms"
-      className="min-h-screen flex items-center justify-center px-6 py-20 bg-black"
+      className=" flex items-center justify-center mt-10 bg-black"
     >
       <motion.div
         className="w-full max-w-5xl bg-black p-10 md:p-16 text-white shadow-lg"
