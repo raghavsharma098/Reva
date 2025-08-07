@@ -1,4 +1,8 @@
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import emailjs from "emailjs-com";
+import ReCAPTCHA from "react-google-recaptcha";
+
 import {
   Mail,
   Phone,
@@ -28,14 +32,43 @@ const itemVariants = {
 };
 
 export default function ContactUs() {
+  const form = useRef();
+  const recaptchaRef = useRef();
+  const [isVerified, setIsVerified] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    if (!isVerified) {
+      alert("Please verify that you are not a robot.");
+      return;
+    }
+
+    emailjs
+      .sendForm(
+        "service_j868xtd",
+        "template_c1bdnha",
+        form.current,
+        "Kp4ucPjOWf9wN27-0"
+      )
+      .then(
+        () => {
+          alert("Message sent successfully! We typically respond within 1–2 business days");
+        },
+        () => {
+          alert("Failed to send message. Try again.");
+        }
+      );
+
+    recaptchaRef.current.reset();
+    setIsVerified(false);
+    e.target.reset();
+  };
+
   return (
     <>
       <Header />
-
-      <section
-        id="contact"
-        className=" bg-black px-4 py-20 text-white mt-10"
-      >
+      <section id="contact" className="bg-black px-4 py-20 text-white mt-10">
         <motion.div
           className="max-w-6xl mx-auto"
           initial="hidden"
@@ -65,8 +98,8 @@ export default function ContactUs() {
               <Mail className="text-blue-400 mt-1" />
               <div>
                 <p className="font-semibold text-white">Email</p>
-                <a href="mailto:reva@lilsindia.com" className="text-blue-300 underline hover:text-blue-200">
-                  reva@lilsindia.com
+                <a href="mailto:lilsindiallp@gmail.com" className="text-blue-300 underline hover:text-blue-200">
+                  lilsindiallp@gmail.com
                 </a>
               </div>
             </motion.div>
@@ -85,65 +118,85 @@ export default function ContactUs() {
               <MapPin className="text-yellow-400 mt-1" />
               <div>
                 <p className="font-semibold text-white">Address</p>
-                <p>LEXORA REVA Network</p>
-                <p>Level 15, UB City, Vittal Mallya Road</p>
+                
+                <p>LEXORA Intelligence & Legal Studies LLP
+                Level 15, UB City 24, Vittal Mallya Road 
+                </p>
                 <p>Bangalore - 560001, Karnataka</p>
+                <p>Website : www.lilsindia.com</p>
               </div>
             </motion.div>
           </div>
 
           {/* Contact Form */}
           <motion.div
-  className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 md:p-10 shadow-xl"
-  variants={itemVariants}
->
-  <h3 className="text-2xl font-bold text-center text-white mb-6">
-    Contact Form
-  </h3>
-
-  <form className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-    <input
-      type="text"
-      placeholder="Full Name"
-      className="bg-black/70 border border-gray-700 text-white px-4 py-2.5 rounded-md focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition"
-      required
-    />
-    <input
-      type="email"
-      placeholder="Email Address"
-      className="bg-black/70 border border-gray-700 text-white px-4 py-2.5 rounded-md focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition"
-      required
-    />
-    <input
-      type="tel"
-      placeholder="Phone Number"
-      className="bg-black/70 border border-gray-700 text-white px-4 py-2.5 rounded-md focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition"
-      required
-    />
-    <textarea
-      placeholder="Your Message"
-      rows={4}
-      className="bg-black/70 border border-gray-700 text-white px-4 py-2.5 rounded-md sm:col-span-2 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition"
-      required
-    ></textarea>
-
-    <div className="sm:col-span-2 flex justify-center">
-      <button
-        type="submit"
-        className="px-6 py-2 rounded-md bg-gradient-to-r from-blue-600 to-blue-400 text-white font-medium text-sm hover:scale-105 hover:shadow-lg transition"
-      >
-        Send Massage
-      </button>
-    </div>
-  </form>
-</motion.div>
-
-
-          {/* Social Media Icons */}
-          <motion.div
-            className="text-center mt-16"
+            className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 md:p-10 shadow-xl"
             variants={itemVariants}
           >
+            <h3 className="text-2xl font-bold text-center text-white mb-6">
+              Contact Form
+            </h3>
+
+            <form
+              ref={form}
+              onSubmit={sendEmail}
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm"
+            >
+              <input
+                type="text"
+                name="name"
+                placeholder="Full Name"
+                className="bg-black/70 border border-gray-700 text-white px-4 py-2.5 rounded-md focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                className="bg-black/70 border border-gray-700 text-white px-4 py-2.5 rounded-md focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition"
+                required
+              />
+              
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                pattern="[0-9]{10}"
+                maxLength={10}
+                className="bg-black/70 border border-gray-700 text-white px-4 py-2.5 rounded-md focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition"
+                required
+              />
+
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                rows={4}
+                className="bg-black/70 border border-gray-700 text-white px-4 py-2.5 rounded-md sm:col-span-2 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition"
+                required
+              ></textarea>
+
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey="6LcDfZwrAAAAAHPkP5GbnONkm74Ay3UGJ5I0Aro6"
+                onChange={() => setIsVerified(true)}
+                className="sm:col-span-2 mx-auto"
+              />
+
+              <div className="sm:col-span-2 flex justify-center">
+                <button
+                  type="submit"
+                  className="px-6 py-2 rounded-md bg-gradient-to-r from-blue-600 to-blue-400 text-white font-medium text-sm hover:scale-105 hover:shadow-lg transition"
+                
+                >
+                  Send Message
+                </button>
+              </div>
+            </form>
+            <p className="text-center mt-5 font-medium">We typically respond within 1–2 business days.</p>
+          </motion.div>
+
+          {/* Social Media Icons */}
+          <motion.div className="text-center mt-16" variants={itemVariants}>
             <p className="text-gray-400 mb-4">Follow us</p>
             <div className="flex justify-center gap-8 text-2xl">
               <a href="#" aria-label="LinkedIn" className="hover:text-blue-500 transition-all hover:scale-110">
@@ -167,15 +220,9 @@ export default function ContactUs() {
           </motion.div>
 
           {/* Footer Note */}
-          <motion.p
-            className="text-center text-sm text-gray-500 italic mt-6"
-            variants={itemVariants}
-          >
-            We typically respond within 1–2 business days.
-          </motion.p>
+          
         </motion.div>
       </section>
-
       <Footer />
     </>
   );

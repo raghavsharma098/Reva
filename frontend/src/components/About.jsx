@@ -136,22 +136,55 @@ export default function Features() {
 
       {/* Special Offer Section */}
       <motion.div
-        initial={{ scale: 0.95, opacity: 0 }}
-        whileInView={{ scale: 1, opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="bg-[#121212] border border-[#0061AA] rounded-2xl px-6 sm:px-10 py-10 mb-20 max-w-4xl mx-auto text-center shadow-xl"
-      >
-        <h4 className="text-2xl sm:text-3xl font-bold text-[#0061AA] mb-3">
-          🎁 Get Your REVA Professional Kit FREE!
-        </h4>
-        <p className="text-gray-300 text-base sm:text-lg mb-2">
-          <strong>Complete your profile</strong> to claim your exclusive starter pack.
-        </p>
-        <p className="text-gray-400 text-sm sm:text-base">
-          Includes a <strong>NFC Business Card, Logo Pin, Premium Diary, Organizer</strong>, and branded REVA merchandise to boost your professional visibility.*
-        </p>
-      </motion.div>
+  initial={{ scale: 0.95, opacity: 0 }}
+  whileInView={{ scale: 1, opacity: 1 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+  className="bg-[#121212] px-8 sm:px-16 py-16 mb-20 max-w-7xl mx-auto shadow-2xl rounded-2xl"
+>
+  <div className="flex flex-col lg:flex-row items-center gap-14">
+    {/* Text Section */}
+    <div className="w-full lg:w-1/2 text-center lg:text-left">
+      <h4 className="text-3xl sm:text-4xl font-extrabold text-[#00B4D8] mb-6 leading-tight">
+        🎁 Get Your REVA Professional Kit FREE!
+      </h4>
+      <p className="text-gray-300 text-lg sm:text-xl mb-4">
+        <strong>Complete your profile</strong> to claim your exclusive starter pack.
+      </p>
+      <p className="text-gray-400 text-base sm:text-lg leading-relaxed">
+        Includes a <strong>NFC Business Card, Logo Pin, Premium Diary, Organizer</strong>, and branded REVA merchandise to boost your professional visibility.*
+      </p>
+    </div>
+
+    {/* Image Section */}
+    <div className="w-full lg:w-1/2 flex justify-center gap-6 flex-wrap">
+      {[{
+        src: "img2.jpg",
+        alt: "REVA Kit Preview 1"
+      }, {
+        src: "img NFC.jpg",
+        alt: "REVA Kit Preview 2"
+      }].map((img, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: i * 0.3, duration: 0.6 }}
+          viewport={{ once: true }}
+          className="overflow-hidden rounded-xl border border-[#2a2a2a] shadow-xl"
+        >
+          <img
+            src={img.src}
+            alt={img.alt}
+            className="w-52 h-52 sm:w-56 sm:h-56 object-cover transform transition-transform duration-300 hover:scale-105"
+          />
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</motion.div>
+
+
 
       {/* Feature Cards */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

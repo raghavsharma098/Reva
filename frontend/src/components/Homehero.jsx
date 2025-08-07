@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
+import { useCallback } from "react";
 
 export default function HomeHero() {
+  const handleAppClick = useCallback((e) => {
+    e.preventDefault();
+    alert("🚧 The app is launching soon. Stay tuned!");
+  }, []);
+
   return (
     <section className="relative bg-black text-white overflow-hidden py-20 px-4 sm:px-8 mt-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center relative z-10">
@@ -31,22 +37,23 @@ export default function HomeHero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 pt-5 w-full max-w-md mx-auto sm:mx-0">
-          <a
-            href="#"
-            className="flex-1 bg-[#0054A5] text-white text-sm font-semibold px-4 py-4 rounded-lg shadow-md hover:scale-105 hover:shadow-lg transition flex items-center justify-center gap-2"
-          >
-            <img src="/apple-logo.png" alt="Apple Store" className="w-4 h-4" />
-            App Store
-          </a>
-          <a
-            href="#"
-            className="flex-1 bg-white text-black text-sm font-semibold px-4 py-4 rounded-lg shadow-md hover:scale-105 hover:shadow-lg transition flex items-center justify-center gap-2"
-          >
-            <img src="/app.png" alt="Google Play" className="w-4 h-4" />
-            Google Play
-          </a>
-        </div>
-
+            <a
+              href="#"
+              onClick={handleAppClick}
+              className="flex-1 bg-[#0054A5] text-white text-sm font-semibold px-4 py-4 rounded-lg shadow-md hover:scale-105 hover:shadow-lg transition flex items-center justify-center gap-2"
+            >
+              <img src="/apple-logo.png" alt="Apple Store" className="w-4 h-4" />
+              App Store
+            </a>
+            <a
+              href="#"
+              onClick={handleAppClick}
+              className="flex-1 bg-white text-black text-sm font-semibold px-4 py-4 rounded-lg shadow-md hover:scale-105 hover:shadow-lg transition flex items-center justify-center gap-2"
+            >
+              <img src="/app.png" alt="Google Play" className="w-4 h-4" />
+              Google Play
+            </a>
+          </div>
         </div>
 
         {/* Right Side - Phone Images */}

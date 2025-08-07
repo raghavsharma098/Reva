@@ -79,7 +79,7 @@ export default function Footer() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          📩 reva@lilsindia.com
+          📩 lilsindiallp@gmail.com
         </motion.a>
 
         {/* Navigation Links */}
@@ -94,7 +94,7 @@ export default function Footer() {
           <a href="terms" className="hover:underline">Terms</a>
           <a href="/privacy" className="hover:underline">Privacy Policy</a>
           <a href="/disclaimer" className="hover:underline">Disclaimer</a>
-          <a href="/" className="hover:underline">Download App</a>
+          {/* <a href="/" className="hover:underline">Download App</a> */}
         </motion.div>
 
         {/* Social Media Section */}
